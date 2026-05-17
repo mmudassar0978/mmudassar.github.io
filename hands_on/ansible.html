@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ansible DevOps Project</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        color: #ffffff;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    h1, h2, h3, p, li {
+        color: #ffffff;
+    }
+
+    hr {
+        border: 1px solid #333;
+        margin: 30px 0;
+    }
+
+    .highlight {
+        color: #00ffae;
+        font-weight: bold;
+    }
+
+    /* Carousel */
+    .carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-track a {
+    min-width: 100%;
+    display: block;
+}
+
+.carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.9);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ROLE -->
+<section>
+    <h1>🚀 Role of Ansible in DevOps</h1>
+    <p>
+        Ansible plays a key role in DevOps by enabling automation of configuration management, application deployment, and infrastructure provisioning. 
+        It uses YAML-based playbooks to define tasks, making it easy to manage complex environments. 
+        Its agentless architecture ensures fast and consistent deployment across systems.
+    </p>
+</section>
+
+<hr>
+
+<!-- PROJECT IMPLEMENTATION (MOVED HERE) -->
+<section>
+    <h1>🛠️ Project Implementation (Ansible Automation)</h1>
+
+    <p>
+I implemented this project using Ansible to automate the deployment of multiple containerized services in a structured way. Instead of relying on default system configurations, I created a custom inventory file and ansible.cfg at the project level, which allowed me to manage hosts and configurations independently from the /etc/ansible directory. This made the project more portable and easier to version-control.
+
+I defined Ansible playbooks and roles to install Docker and manage all required services. Each service (PostgreSQL, Redis, Zookeeper, and NATS) was deployed using its respective Docker image with proper port mappings. I also included RedisInsight and pgAdmin to provide graphical interfaces for Redis and PostgreSQL monitoring.
+
+All services were orchestrated through Ansible tasks, ensuring consistency and repeatability in deployment. I verified that each container was running correctly and accessible through its assigned port. The project structure was kept modular so new services can be easily added in the future. Overall, this implementation helped me gain practical experience in automation, containerization, and infrastructure management using Ansible in a real DevOps workflow.    </p>
+
+</section>
+
+<hr>
+
+<!-- DOCKER -->
+<section>
+    <h1>📦 Docker Images Used</h1>
+    <p>zookeeper:3.9</p>
+    <p>nats:latest → Port: 8222</p>
+    <p>redis:7</p>
+    <p>redis/redisinsight → Port: 8001</p>
+    <p>postgres:15</p>
+    <p>dpage/pgadmin4 → Port: 5050</p>
+</section>
+
+<hr>
+
+<!-- SERVICES -->
+<section>
+    <h1>🔧 Services Overview</h1>
+
+    <p>
+        PostgreSQL is used as the main relational database for structured data storage and is managed via pgAdmin UI.
+    </p>
+
+    <p>
+        Redis is used for caching and fast data retrieval, monitored using RedisInsight UI.
+    </p>
+
+    <p>
+        Zookeeper is used for coordination and configuration management in distributed systems.
+    </p>
+
+    <p>
+        NATS is a messaging system used for service communication and runs on port 8222.
+    </p>
+</section>
+
+<hr>
+
+<!-- CAROUSEL -->
+<section>
+    <h1>📸 Screenshots of Practical Implementation</h1>
+
+    <div class="carousel">
+        <div class="carousel-track">
+            <a href="configuration/1.PNG" target="_blank"><img src="configuration/1.PNG"></a>
+            <a href="configuration/2.PNG" target="_blank"><img src="configuration/2.PNG"></a>
+            <a href="configuration/3.PNG" target="_blank"><img src="configuration/3.PNG"></a>
+            <a href="configuration/4.jpeg" target="_blank"><img src="configuration/4.jpeg"></a>
+            <a href="configuration/5.PNG" target="_blank"><img src="configuration/5.PNG"></a>
+        </div>
+
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+    </div>
+</section>
+
+</div>
+
+
+<script>
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-track a');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    let index = 0;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        index++;
+        if (index >= slides.length) {
+            index = 0; // loop back to first
+        }
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        index--;
+        if (index < 0) {
+            index = slides.length - 1; // go to last
+        }
+        updateCarousel();
+    });
+</script>
+</body>
+</html>

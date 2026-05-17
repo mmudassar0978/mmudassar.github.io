@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps CI/CD Pipeline</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1e1e1e;
+    color: #ddd;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #fff;
+}
+
+.section {
+    margin-bottom: 70px;
+}
+
+/* ================= CAROUSEL ================= */
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-track a {
+    min-width: 100%;
+    display: block;
+}
+
+.carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.9);
+}
+
+ul {
+    line-height: 1.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- INTRO -->
+<section class="section">
+<h1>🔄 CI/CD Pipeline in DevOps</h1>
+
+<p>
+CI/CD (Continuous Integration and Continuous Deployment) is a core DevOps practice that automates the process of building, testing, and deploying applications.
+It helps teams deliver code changes faster and more reliably by reducing manual intervention.
+</p>
+
+<p>
+With CI/CD pipelines, developers can continuously integrate code, run automated tests, and deploy applications to production environments efficiently,
+ensuring faster releases, improved quality, and consistent delivery.
+</p>
+</section>
+
+<!-- ================= GITLAB CI/CD ================= -->
+<section class="section">
+<h2>🔹 GitLab CI/CD Pipeline</h2>
+
+<p>
+I implemented this GitLab CI/CD task to automate deployment of my resume applications using Docker containers. First, I created a GitLab repository named “two_index_files” and added my source code along with a Dockerfile for containerization. Then, I set up a self-hosted GitLab Runner named “two-index-runner” on my Ubuntu VM to execute pipeline jobs. After that, I wrote a .gitlab-ci.yml file to define the CI/CD pipeline for building and deploying the containers. Using this pipeline, I deployed two resume files (mapped as index.html and index1.html) inside Docker containers. Finally, I exposed them on localhost ports 8001 and 8002, successfully achieving automated deployment through GitLab CI/CD.</p>
+
+<h3>Tools Used</h3>
+<ul>
+<li>GitLab CI/CD</li>
+</ul>
+
+<h3>Prerequisites</h3>
+<ul>
+<li>GitLab account</li>
+<li>Project setup</li>
+<li>Access to GitLab CI/CD features</li>
+</ul>
+
+<h3>📸 Screenshots of Practical Implementation</h3>
+
+<div class="carousel">
+    <div class="carousel-track">
+        <a href="cicd/5.PNG" target="_blank"><img src="cicd/5.PNG"></a>
+        <a href="cicd/6.jpeg" target="_blank"><img src="cicd/6.jpeg"></a>
+        <a href="cicd/7.jpeg" target="_blank"><img src="cicd/7.jpeg"></a>
+        <a href="cicd/8.jpeg" target="_blank"><img src="cicd/8.jpeg"></a>
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+</div>
+</section>
+
+<!-- ================= GITHUB ACTIONS ================= -->
+<section class="section">
+<h2>🔹 GitHub Actions CI/CD Pipeline</h2>
+
+<p>
+I implemented this GitHub Actions setup as part of my CI workflow integrated with an ArgoCD pipeline. First, I created a GitHub repository and pushed my application source code to it. Then, I configured a GitHub Actions workflow by creating a django.yml file inside the .github/workflows/ directory. After that, I set up a self-hosted runner named “argocd” on my Ubuntu VM to execute the CI jobs. Whenever I pushed changes to the repository, the workflow automatically built a Docker image and pushed it to DockerHub. I securely stored DockerHub credentials (DOCKERHUB_USERNAME and DOCKERHUB_TOKEN) in GitHub Secrets, ensuring safe authentication during the image push process. This setup enabled automated CI and seamless integration with my deployment pipeline.</p>
+
+<h3>Tools Used</h3>
+<ul>
+<li>GitHub Actions</li>
+</ul>
+
+<h3>Prerequisites</h3>
+<ul>
+<li>GitHub account</li>
+<li>Repository setup</li>
+<li>Access to GitHub Actions features</li>
+</ul>
+
+<h3>📸 Screenshots of Practical Implementation</h3>
+
+<div class="carousel">
+    <div class="carousel-track">
+        <a href="cicd/1.PNG" target="_blank"><img src="cicd/1.PNG"></a>
+        <a href="cicd/2.PNG" target="_blank"><img src="cicd/2.PNG"></a>
+        <a href="cicd/3.PNG" target="_blank"><img src="cicd/3.PNG"></a>
+        <a href="cicd/4.PNG" target="_blank"><img src="cicd/4.PNG"></a>
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+</div>
+</section>
+
+<!-- ================= CIRCLECI ================= -->
+<section class="section">
+<h2>🔹 CircleCI CI/CD Pipeline</h2>
+
+<p>
+I implemented this CircleCI task to automate the deployment of my resume application using a CI pipeline. First, I created an account on CircleCI and connected it with my GitHub repository containing the source code. Then, I set up a self-hosted runner on CircleCI and registered it with my Ubuntu VM to execute the pipeline jobs. After that, I triggered the pipeline by committing changes to my GitHub repository. The pipeline built and deployed the application inside a container, which I successfully exposed on localhost port 8086. This setup allowed me to achieve automated deployment using CircleCI.</p>
+
+<h3>Tools Used</h3>
+<ul>
+<li>CircleCI</li>
+</ul>
+
+<h3>Prerequisites</h3>
+<ul>
+<li>CircleCI account</li>
+<li>Project setup</li>
+<li>Access to CircleCI features</li>
+</ul>
+
+<h3>📸 Screenshots of Practical Implementation</h3>
+
+<div class="carousel">
+    <div class="carousel-track">
+        <a href="cicd/9.PNG" target="_blank"><img src="cicd/9.PNG"></a>
+        <a href="cicd/10.PNG" target="_blank"><img src="cicd/10.PNG"></a>
+        <a href="cicd/11.PNG" target="_blank"><img src="cicd/11.PNG"></a>
+        <a href="cicd/12.PNG" target="_blank"><img src="cicd/12.PNG"></a>
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+</div>
+</section>
+
+<!-- ================= ARGOCD =============== -->
+
+<section class="section">
+<h2>🔹 ArgoCD Pipeline</h2>
+
+<p>
+I implemented this deployment by integrating Kubernetes with GitOps using ArgoCD. First, I deployed my Django-based user authentication application on a K3s Kubernetes cluster. Then, I configured ArgoCD to track my Git repository and manage the application deployment automatically. Once connected, ArgoCD successfully synchronized the application state with the repository, and the application status showed as healthy and fully synced. The Kubernetes resources were created and running correctly within the cluster. Finally, I exposed the application using a NodePort service on port 30080, allowing me to access it locally and verify that the deployment was working as expected.</p>
+
+<h3>Tools Used</h3>
+<ul>
+<li>ArgoCD</li>
+</ul>
+
+<h3>Prerequisites</h3>
+<ul>
+<li>ArgoCD account</li>
+<li>Project setup</li>
+<li>Access to ArgoCD features</li>
+</ul>
+
+<h3>📸 Screenshots of Practical Implementation</h3>
+
+<div class="carousel">
+    <div class="carousel-track">
+        <a href="cicd/13.PNG" target="_blank"><img src="cicd/13.PNG"></a>
+        <a href="cicd/14.PNG" target="_blank"><img src="cicd/14.PNG"></a>
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+</div>
+</section>
+
+
+<script>
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = track.children;
+    let index = 0;
+
+    carousel.querySelector('.next').onclick = () => {
+        index = (index + 1) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+    };
+
+    carousel.querySelector('.prev').onclick = () => {
+        index = (index - 1 + slides.length) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+    };
+});
+</script>
+
+</body>
+</html>

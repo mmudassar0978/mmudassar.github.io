@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Monitoring Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1e1e1e;
+    color: #ddd;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #fff;
+}
+
+.section {
+    margin-bottom: 70px;
+}
+
+/* ================= CAROUSEL ================= */
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-track a {
+    min-width: 100%;
+    display: block;
+}
+
+.carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.9);
+}
+
+ul {
+    line-height: 1.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- INTRO -->
+<section class="section">
+<h1>📊 Monitoring & Observability in DevOps</h1>
+
+<p>
+Monitoring and observability are essential in DevOps to ensure system reliability, performance, and availability.
+They provide real-time insights into infrastructure and applications, helping detect issues early and maintain system stability.
+</p>
+
+<p>
+By analyzing metrics, logs, and system behavior, DevOps engineers can troubleshoot faster, optimize performance,
+and ensure smooth deployments in production environments.
+</p>
+</section>
+
+<!-- ================= PROMETHEUS ================= -->
+<section class="section">
+<h2>🔹 Prometheus + Grafana + Node Exporter</h2>
+
+<p>
+I implemented this Prometheus + Grafana task as a complete monitoring workflow in my DevOps setup. First, I installed Prometheus and Grafana on my system to start collecting and visualizing metrics. After that, I configured Prometheus as a data source in Grafana by adding the Prometheus server URL, which allowed Grafana to fetch real-time metrics. Then, I set up email alerting in Grafana by generating a Google App Password to securely connect SMTP services. Finally, I created custom alert rules in Grafana dashboards to monitor system performance and trigger notifications when thresholds were crossed, giving me real-time observability of my infrastructure.
+</p>
+
+<h3>Tools Used</h3>
+<ul>
+<li>Prometheus</li>
+<li>Grafana</li>
+<li>Node Exporter</li>
+</ul>
+
+<h3>Prerequisites</h3>
+<ul>
+<li>Prometheus installation</li>
+<li>Grafana installation</li>
+<li>Node Exporter installation</li>
+</ul>
+
+<h3>📸 Screenshots of Practical Implementation</h3>
+
+<div class="carousel">
+    <div class="carousel-track">
+        <a href="monitoring/1.PNG" target="_blank"><img src="monitoring/1.PNG"></a>
+        <a href="monitoring/2.PNG" target="_blank"><img src="monitoring/2.PNG"></a>
+        <a href="monitoring/3.PNG" target="_blank"><img src="monitoring/3.PNG"></a>
+        <a href="monitoring/4.PNG" target="_blank"><img src="monitoring/4.PNG"></a>
+        <a href="monitoring/5.PNG" target="_blank"><img src="monitoring/5.PNG"></a>
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+</div>
+</section>
+
+<!-- ================= ELK ================= -->
+<section class="section">
+<h2>🔹 ELK Stack (Elasticsearch + Kibana + Metricbeat)</h2>
+
+<p>
+I implemented this ELK Stack monitoring setup as part of my DevOps observability practice. First, I installed and configured Metricbeat with the system module along with Elasticsearch and Kibana to start collecting system-level metrics. Metricbeat was used to gather real-time data such as CPU, memory, and disk usage from the host system. This data was then sent to Elasticsearch, where it was indexed and stored for analysis. After that, I connected Kibana to Elasticsearch to visualize the collected metrics. Finally, I created and saved dashboards in Kibana to observe system performance in real time, giving me clear visibility into infrastructure health and resource usage.
+</p>
+
+<h3>Tools Used</h3>
+<ul>
+<li>Elasticsearch</li>
+<li>Kibana</li>
+<li>Metricbeat</li>
+</ul>
+
+<h3>Prerequisites</h3>
+<ul>
+<li>Elasticsearch installation</li>
+<li>Kibana installation</li>
+<li>Metricbeat installation</li>
+</ul>
+
+<h3>📸 Screenshots of Practical Implementation</h3>
+
+<div class="carousel">
+    <div class="carousel-track">
+        <a href="monitoring/6.PNG" target="_blank"><img src="monitoring/6.PNG"></a>
+        <a href="monitoring/7.PNG" target="_blank"><img src="monitoring/7.PNG"></a>
+        <a href="monitoring/8.PNG" target="_blank"><img src="monitoring/8.PNG"></a>
+        <a href="monitoring/9.PNG" target="_blank"><img src="monitoring/9.PNG"></a>
+        <a href="monitoring/10.PNG" target="_blank"><img src="monitoring/10.PNG"></a>
+        <a href="monitoring/11.PNG" target="_blank"><img src="monitoring/11.PNG"></a>
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+</div>
+</section>
+
+<!-- ================= SENSU ================= -->
+<section class="section">
+<h2>🔹 Sensu Monitoring</h2>
+
+<p>
+I implemented Sensu as part of my DevOps monitoring and alerting practice. First, I installed and configured the Sensu backend along with the Sensu agent on my local VM to enable system monitoring. Then, I installed the Sensu CLI to manage and interact with the Sensu environment from the command line. After that, I configured my localhost machine as a monitored entity in Sensu. I added required assets (plugins) for CPU, memory, and disk monitoring to the agent, and created checks for each of these system components. I accessed the Sensu dashboard on port 3001 to observe real-time metrics for CPU, memory, and disk usage. Finally, I configured an email alert rule for high CPU usage to get notified when system performance exceeds defined thresholds, ensuring proactive monitoring and response.
+</p>
+
+<h3>Tools Used</h3>
+<ul>
+<li>Sensu Agent</li>
+<li>Sensu Dashboard</li>
+</ul>
+
+<h3>Prerequisites</h3>
+<ul>
+<li>Sensu account</li>
+<li>API key setup</li>
+</ul>
+
+<h3>📸 Screenshots of Practical Implementation</h3>
+
+<div class="carousel">
+    <div class="carousel-track">
+        <a href="monitoring/12.PNG" target="_blank"><img src="monitoring/12.PNG"></a>
+        <a href="monitoring/13.PNG" target="_blank"><img src="monitoring/13.PNG"></a>
+        <a href="monitoring/14.PNG" target="_blank"><img src="monitoring/14.PNG"></a>
+        <a href="monitoring/15.PNG" target="_blank"><img src="monitoring/15.PNG"></a>
+        <a href="monitoring/16.PNG" target="_blank"><img src="monitoring/16.PNG"></a>
+        <a href="monitoring/17.PNG" target="_blank"><img src="monitoring/17.PNG"></a>
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+</div>
+</section>
+
+<!-- ================= DATADOG ================= -->
+<section class="section">
+<h2>🔹 Datadog Monitoring</h2>
+
+<p>
+I implemented Datadog as part of my DevOps observability setup after successfully signing up and configuring the platform. First, I created a custom dashboard to monitor my VM infrastructure and visualize key system metrics in real time. Then, I installed the Redis service on my VM and integrated it with the Datadog Agent to enable monitoring of Redis performance and health metrics. After successful integration, I verified that metrics were being collected and displayed in Datadog dashboards. Finally, I configured an alert system to trigger notifications when CPU usage exceeded 70%, and linked my email address to receive real-time alert messages. This setup helped me achieve centralized monitoring and proactive system alerting using Datadog.
+</p>
+
+<h3>Tools Used</h3>
+<ul>
+<li>Datadog Agent</li>
+<li>Datadog Dashboard</li>
+</ul>
+
+<h3>Prerequisites</h3>
+<ul>
+<li>Datadog account</li>
+<li>API key setup</li>
+</ul>
+
+<h3>📸 Screenshots of Practical Implementation</h3>
+
+<div class="carousel">
+    <div class="carousel-track">
+        <a href="monitoring/18.PNG" target="_blank"><img src="monitoring/18.PNG"></a>
+        <a href="monitoring/19.PNG" target="_blank"><img src="monitoring/19.PNG"></a>
+        <a href="monitoring/20.PNG" target="_blank"><img src="monitoring/20.PNG"></a>
+        <a href="monitoring/21.PNG" target="_blank"><img src="monitoring/21.PNG"></a>
+        <a href="monitoring/22.PNG" target="_blank"><img src="monitoring/22.PNG"></a>
+        <a href="monitoring/23.PNG" target="_blank"><img src="monitoring/23.PNG"></a>
+        <a href="monitoring/24.PNG" target="_blank"><img src="monitoring/24.PNG"></a>
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+</div>
+</section>
+
+</div>
+
+<script>
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = track.children;
+    let index = 0;
+
+    carousel.querySelector('.next').onclick = () => {
+        index = (index + 1) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+    };
+
+    carousel.querySelector('.prev').onclick = () => {
+        index = (index - 1 + slides.length) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+    };
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DevOps Monitoring & Containerization Project</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        color: #ffffff;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    h1, h2, h3, p, li {
+        color: #ffffff !important;
+    }
+
+    hr {
+        border: 1px solid #333;
+        margin: 30px 0;
+    }
+
+    section {
+        margin-bottom: 40px;
+    }
+
+    ul {
+        color: #ffffff;
+    }
+
+    /* Carousel */
+   
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-track a {
+    min-width: 100%;
+    display: block;
+}
+
+.carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.9);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SECTION 1 -->
+<section>
+    <h2>☸️ Containerization and Orchestration in DevOps</h2>
+
+    <p>
+        Containerization and orchestration are essential in DevOps for building scalable, consistent, and automated systems. 
+        Containerization packages applications with all dependencies so they run the same across every environment without compatibility issues. 
+        Orchestration manages multiple containers efficiently by handling deployment, scaling, networking, and reliability. 
+        Together, they improve automation, speed, and stability in modern cloud-native DevOps workflows.
+    </p>
+</section>
+
+<hr>
+
+<!-- SECTION 2 -->
+<section>
+    <h2>🔹 Project Implementation (K3s + ArgoCD GitOps)</h2>
+
+    <p>
+        First, I deployed my Django-based user authentication application on a K3s cluster running with a single control-plane node, 
+        which made the environment simple and efficient. Then, I configured ArgoCD to continuously monitor my Git repository and automatically sync changes to the cluster. 
+        All Kubernetes resources were created under the <b>"django-proj"</b> namespace. The application pods and services were successfully deployed and running in a healthy state. 
+        Finally, I exposed the application using a NodePort service on port <b>30080</b>, allowing local access and confirming successful GitOps deployment.
+    </p>
+</section>
+
+<hr>
+
+<!-- SECTION 3 -->
+<section>
+    <h2>🔹 K3s Orchestration (Lightweight Kubernetes)</h2>
+
+    <p>
+        K3s is a lightweight Kubernetes distribution designed for simplicity and fast deployment. 
+        It provides full orchestration capabilities with minimal system overhead, making it ideal for development and learning environments. 
+        In my project, I used a single control-plane node to manage the cluster efficiently. 
+        It handles container scheduling, service discovery, and workload management. 
+        K3s supports standard Kubernetes manifests, ensuring compatibility with existing configurations. 
+        Its lightweight nature makes it suitable for small-scale production and testing environments.
+    </p>
+</section>
+
+<hr>
+
+<!-- SECTION 4 -->
+<section>
+    <h2>🔹 Dockerization</h2>
+
+    <p>
+        Dockerization is the process of packaging an application with all its dependencies into a portable container. 
+        It ensures that the application runs consistently across development, testing, and production environments. 
+        In my project, I used Docker to containerize my Django application for smooth deployment. 
+        Each container includes all required libraries and runtime configurations, eliminating environment issues. 
+        Docker images were pushed to DockerHub for version control and reuse. 
+        This approach improved scalability, portability, and deployment speed in my DevOps workflow.
+    </p>
+</section>
+
+<hr>
+
+<!-- SECTION 5 -->
+<section>
+    <h2>Tools Used</h2>
+
+    <ul>
+        <li>Kubernetes K3s – Lightweight container orchestration platform for managing clusters</li>
+        <li>Docker – Used for containerizing the Django application</li>
+        <li>DockerHub – Container registry for storing and managing Docker images</li>
+        <li>ArgoCD – GitOps tool for automated Kubernetes deployments and synchronization</li>
+        <li>Django Web Framework – Backend framework used to build the user authentication system</li>
+    </ul>
+</section>
+
+<hr>
+
+<!-- SCREENSHOTS -->
+<section>
+    <h2>📸 Screenshots of Practical Implementation</h2>
+
+    <div class="carousel">
+        <div class="carousel-track">
+            <a href="orchestration/1.PNG" target="_blank"><img src="orchestration/1.PNG"></a>
+            <a href="orchestration/2.PNG" target="_blank"><img src="orchestration/2.PNG"></a>
+            <a href="orchestration/3.PNG" target="_blank"><img src="orchestration/3.PNG"></a>
+        </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+    </div>
+</section>
+
+</div>
+
+<script>
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-track a');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    let index = 0;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        index++;
+        if (index >= slides.length) {
+            index = 0; // loop back to first
+        }
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        index--;
+        if (index < 0) {
+            index = slides.length - 1; // go to last
+        }
+        updateCarousel();
+    });
+</script>
+
+</body>
+</html>

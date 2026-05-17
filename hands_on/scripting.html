@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Scripting Blog</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1e1e1e;
+    color: #ddd;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #ffffff;
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-track a {
+    flex: 0 0 100%;
+    display: block;
+}
+
+.carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.9);
+}
+
+ul {
+    line-height: 1.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- INTRO -->
+<section class="section">
+<h1>⚙️ Scripting & Automation in DevOps</h1>
+
+<p>
+Scripting is one of the most important components in modern DevOps practices.
+It helps engineers automate repetitive tasks and reduce manual effort in system operations.
+It improves consistency across different environments and reduces the chances of human error.
+DevOps teams rely on scripting to manage infrastructure and application deployments efficiently.
+It also plays a key role in monitoring systems and maintaining uptime in production.
+Through scripting, complex workflows can be simplified into repeatable processes.
+It enables faster delivery of software by supporting CI/CD pipelines.
+Automation through scripting improves scalability and reliability of systems.
+Overall, scripting is a core foundation that connects development and operations in DevOps.
+</p>
+</section>
+
+<!-- BASH -->
+<section class="section">
+<h2>1. Bash Scripting in DevOps</h2>
+
+<p>
+I implemented bash scripting and performed following two task:
+</p>
+
+<h3>Resume Deployment Task</h3>
+<p>
+I implemented Bash scripting to automate the deployment of my resume on a local server. The process included pulling my GitHub repository, building a Docker image, and pushing it to Docker Hub. After that, I created a Docker container from the image and exposed it on port 8089. Finally, I accessed my resume through localhost successfully.
+</p>
+
+<h3>📸 Screenshots of Practical Implementation</h3>
+
+<div class="carousel">
+    <div class="carousel-track">
+        <a href="scripting/1.PNG" target="_blank"><img src="scripting/1.PNG"></a>
+        <a href="scripting/3.PNG" target="_blank"><img src="scripting/3.PNG"></a>
+        <a href="scripting/4.PNG" target="_blank"><img src="scripting/4.PNG"></a>
+        <a href="scripting/5.PNG" target="_blank"><img src="scripting/5.PNG"></a>
+        <a href="scripting/6.PNG" target="_blank"><img src="scripting/6.PNG"></a>
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+</div>
+<br>
+<br>
+<br>
+<h3>System Monitoring Task</h3>
+<p>
+I used Bash scripting to monitor system resources in real time. The script collected CPU usage, disk usage, memory usage, and system uptime. This helped in analyzing system performance and identifying resource utilization. It provided a simple automated way to track system health.</p>
+
+<h3>📸 Screenshots of Practical Implementation</h3>
+
+<div class="carousel">
+    <div class="carousel-track">
+        <a href="scripting/7.PNG" target="_blank"><img src="scripting/7.PNG"></a>
+        <a href="scripting/8.PNG" target="_blank"><img src="scripting/8.PNG"></a>
+        <a href="scripting/9.PNG" target="_blank"><img src="scripting/9.PNG"></a>
+       
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+</div>
+</section>
+
+<!-- PYTHON -->
+<section class="section">
+<h2>2. Python Scripting in DevOps</h2>
+
+<h3>Backup Automation Task</h3>
+<p>
+I implemented Python scripting to automate local file backup. The script copied the directory from /home/mudassar/dashboard and stored it in /home/mudassar/scripting/backup. This ensured safe storage of important data in another location. It helped in automating the backup process efficiently.</p>
+
+<h3>📸 Screenshots of Practical Implementation</h3>
+
+<div class="carousel">
+    <div class="carousel-track">
+        <a href="scripting/11.PNG" target="_blank"><img src="scripting/11.PNG"></a>
+        <a href="scripting/12.PNG" target="_blank"><img src="scripting/12.PNG"></a>
+        <a href="scripting/13.PNG" target="_blank"><img src="scripting/13.PNG"></a>
+       
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+</div>
+</section>
+
+</div>
+
+
+<script>
+document.querySelectorAll('.carousel').forEach(carousel => {
+
+    const track = carousel.querySelector('.carousel-track');
+    const slides = carousel.querySelectorAll('.carousel-track a');
+    const prevBtn = carousel.querySelector('.prev');
+    const nextBtn = carousel.querySelector('.next');
+
+    let index = 0;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        index++;
+        if (index >= slides.length) {
+            index = 0;
+        }
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        index--;
+        if (index < 0) {
+            index = slides.length - 1;
+        }
+        updateCarousel();
+    });
+
+});
+</script>
+</body>
+</html>
