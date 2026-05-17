@@ -30,6 +30,179 @@
    <!-- Favicons
 	================================================== -->
 	<link rel="shortcut icon" href="OpsOura.png" >
+    <style>
+        @media (max-width: 768px) {
+
+  /* ================= ABOUT SECTION ================= */
+  #about .three.columns {
+    width: 100% !important;
+    float: none !important;
+  }
+
+  #about .nine.columns.main-col {
+    width: 100% !important;
+    float: none !important;
+  }
+
+  #about .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-pic {
+    display: block;
+    margin: 0 auto 20px auto !important;
+  }
+
+  /* ================= CERTIFICATIONS ================= */
+  @media (max-width: 768px) {
+
+  .courses {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  /* LEFT + RIGHT columns full width */
+  .courses .three.columns,
+  .courses .nine.columns {
+    width: 100% !important;
+    float: none !important;
+  }
+
+  /* ONLY heading + image center */
+  .courses .three.columns {
+    text-align: center !important;
+  }
+
+  .courses .three.columns h1 {
+    text-align: center !important;
+  }
+
+  .courses .three.columns img {
+    display: block;
+    margin: 10px auto !important;
+  }
+
+  /* DESCRIPTIONS LEFT ALIGNED */
+  .courses .nine.columns {
+    text-align: left !important;
+  }
+
+}
+  /* ================= LANGUAGES ================= */
+ @media (max-width: 768px) {
+
+  .languages {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  /* full width columns */
+  .languages .three.columns,
+  .languages .nine.columns {
+    width: 100% !important;
+    float: none !important;
+  }
+
+  /* heading column CENTER only */
+  .languages .three.columns {
+    text-align: center !important;
+  }
+
+  .languages .three.columns h1 {
+    text-align: center !important;
+  }
+
+  /* content LEFT aligned */
+  .languages .nine.columns {
+    text-align: left !important;
+  }
+
+}
+  /* ================= HANDS-ON ================= */
+  #hands-on div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .devops-box {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .profile-pic {
+    width: 180px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto 20px auto !important;
+    max-width: 100% !important;
+  }
+
+  #about .three.columns {
+    width: 100% !important;
+    float: none !important;
+    text-align: center !important;
+  }
+
+  #about img {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+
+/* ===================== ADDED (LAPTOP SIZE FIX) ===================== */
+.profile-pic {
+  width: 380px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Optional hover effect (clean portfolio feel) */
+.profile-pic {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+  /* ================= EDUCATION SECTION ================= */
+
+  #Education {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  /* FULL WIDTH COLUMNS */
+  #Education .three.columns,
+  #Education .nine.columns {
+    width: 100% !important;
+    float: none !important;
+  }
+
+  /* HEADING CENTER ONLY */
+  #Education .three.columns {
+    text-align: center !important;
+  }
+
+  #Education .three.columns h1 {
+    text-align: center !important;
+  }
+
+  /* CONTENT LEFT ALIGNED */
+  #Education .nine.columns {
+    text-align: left !important;
+  }
+
+}
+
+    </style>
 
 </head>
 
@@ -278,7 +451,7 @@
         <div class="row">
 
             <div class="three columns">
-                <img class="profile-pic fade-in" src="images/2.jpg" alt="" style="width: 300%; height: auto; margin-left: -35px;" />
+                <img class="profile-pic fade-in" src="images/2.jpg" alt="profile">
             </div>
 
             <div class="nine columns main-col">
